@@ -15,11 +15,11 @@ def play():
         #if a player gets blackjack, they win straight away
         print ("You Win")
         return
-    print("The dealer's first card is", dealer[0][0])
+    print("\nThe dealer's first card is", dealer[0][0])
     #both dealer cards are stored but only the first is revealed
     finishPlayer = False
     while finishPlayer == False:
-        choice = input("Hit or stand?: ")
+        choice = input("\nHit or stand?: ")
         if choice == "hit" or choice == "Hit" or choice == "HIT" or choice == "h" or choice == "H" or choice == "1":
             player, playerScore, bust = HitOrStand(cards, player, playerScore, dealer, "hit").run()
             if bust == True:

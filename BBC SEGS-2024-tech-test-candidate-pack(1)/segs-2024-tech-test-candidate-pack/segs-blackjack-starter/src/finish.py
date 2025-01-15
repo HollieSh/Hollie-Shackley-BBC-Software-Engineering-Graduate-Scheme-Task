@@ -12,10 +12,10 @@ class End:
     def finish(self):
         """Completes the dealer's game"""
         self.dealerScore = Score(self.dealer).calculate()
-        print("The second dealer card is", self.dealer[1][0])
+        print("\nThe second dealer card is", self.dealer[1][0])
         #the dealer's second card is turned over
         if self.dealerScore == 21:
-            print("The dealer wins")
+            print("\nThe dealer wins")
             #if player gets blackjack, already declared so if dealer gets here, must have won
             return False
             #the game ends once a winner is declared
@@ -29,9 +29,9 @@ class End:
                 another = Deal(self.cards).giveCard()
                 self.dealer.append(another)
                 self.dealerScore = Score(self.dealer).calculate()
-                print("the dealer's next card is", another[0])
+                print("The dealer's next card is", another[0])
                 if self.dealerScore == "bust":
-                    print("The dealer has exceeded 21, you win")
+                    print("\nThe dealer has exceeded 21, you win")
                     return False
         return True
         #informs blackjack.py to continue as no player has got blackjack or gone bust
@@ -39,8 +39,8 @@ class End:
     def whoWins(self):
         """As no one has got blackjack or gone bust, calculates the highest score"""
         if self.playerScore > self.dealerScore:
-            print("You win")
+            print("\nYou win")
         elif self.playerScore == self.dealerScore:
-            print("You and the dealer draw")
+            print("\nYou and the dealer draw")
         else:
-            print("Dealer wins")
+            print("\nDealer wins")

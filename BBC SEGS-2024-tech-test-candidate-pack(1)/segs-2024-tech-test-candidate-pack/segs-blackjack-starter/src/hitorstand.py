@@ -16,9 +16,9 @@ class HitOrStand:
         self.player.append(self.another)
         self.playerScore = Score(self.player).calculate()
         #gives the player another card and updates the score
-        print("your next card is", self.another[0])
+        print("Your next card is", self.another[0])
         if self.playerScore == "bust":
-            print("You have exceeded 21, you lose")
+            print("\nYou have exceeded 21, you lose")
             #bust hands are revealed immediately
             return self.player, self.playerScore, True
             #flag is set to False to show that play should not continue
